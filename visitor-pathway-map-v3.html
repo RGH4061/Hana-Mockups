@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hana Website — Visitor Pathway Map</title>
+  <style>
+    :root {
+      --blue:        #1B6EC2;
+      --blue-dark:   #124F8F;
+      --blue-light:  #E8F1FB;
+      --teal:        #0E9E8A;
+      --teal-dark:   #0A7A6A;
+      --teal-light:  #E6F8F6;
+      --amber:       #C97010;
+      --amber-dark:  #9A5500;
+      --amber-light: #FDF3E6;
+      --green:       #2E7D32;
+      --green-light: #EBF5EC;
+      --gray-100:    #F4F6F9;
+      --gray-300:    #CBD2DC;
+      --gray-500:    #7A8799;
+      --gray-700:    #3B4455;
+      --black:       #111827;
+      --white:       #FFFFFF;
+      --radius:      6px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--gray-100);
+      color: var(--black);
+      padding: 40px 24px 60px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* ── Header ── */
+    .header { text-align: center; margin-bottom: 32px; }
+    .header h1 { font-size: 22px; font-weight: 700; color: var(--blue-dark); margin-bottom: 6px; }
+    .header p  { font-size: 13px; color: var(--gray-500); }
+    .wf-badge {
+      display: inline-block; margin-top: 10px;
+      background: #FFDE59; color: #333; font-size: 11px; font-weight: 700;
+      padding: 3px 10px; border-radius: 20px; letter-spacing: .5px; text-transform: uppercase;
+    }
+
+    /* ── Legend ── */
+    .legend {
+      display: flex; gap: 18px; justify-content: center;
+      margin-bottom: 32px; flex-wrap: wrap;
+    }
+    .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--gray-700); }
+    .legend-dot  { width: 13px; height: 13px; border-radius: 3px; flex-shrink: 0; }
+    .legend-dash { width: 28px; height: 0; border-top: 2px dashed var(--gray-500); flex-shrink: 0; }
+
+    /* ── Three-column grid ── */
+    .map-wrap {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 50px 1fr 50px 1fr;
+      align-items: start;
+    }
+
+    /* ── Column ── */
+    .col { display: flex; flex-direction: column; align-items: center; }
+    .col-label {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .6px; padding: 5px 12px; border-radius: 20px;
+      margin-bottom: 4px; white-space: nowrap; text-align: center;
+    }
+    .col-desc {
+      font-size: 11px; color: var(--gray-500); text-align: center;
+      margin-bottom: 14px; max-width: 220px; line-height: 1.4;
+    }
+    .lbl-ems  { background: var(--blue-light);  color: var(--blue-dark); }
+    .lbl-osat { background: var(--teal-light);  color: var(--teal-dark); }
+    .lbl-loc  { background: var(--amber-light); color: var(--amber-dark); }
+
+    /* ── Node ── */
+    .node {
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      text-align: center;
+      width: 100%;
+      max-width: 260px;
+    }
+    .node-title { font-weight: 700; font-size: 13px; display: block; margin-bottom: 2px; }
+    .node-sub   { font-size: 11px; opacity: .8; display: block; }
+
+    /* Node colours */
+    .n-entry   { background: var(--gray-700); color: var(--white); }
+    .n-home    { background: var(--blue-dark); color: var(--white); }
+    .n-mhub    { background: var(--blue); color: var(--white); }
+    .n-mpillar { background: var(--blue-light); color: var(--blue-dark); border: 1.5px solid var(--blue); }
+    .n-msub    { background: var(--white); color: var(--blue-dark); border: 1.5px solid var(--blue); }
+    .n-chub    { background: var(--teal); color: var(--white); }
+    .n-cpillar { background: var(--teal-light); color: var(--teal-dark); border: 1.5px solid var(--teal); }
+    .n-csub    { background: var(--white); color: var(--teal-dark); border: 1.5px solid var(--teal); }
+    .n-lhub    { background: var(--amber); color: var(--white); }
+    .n-lcountry { background: var(--amber-light); color: var(--amber-dark); border: 1.5px solid var(--amber); }
+    .n-lfac    { background: var(--white); color: var(--amber-dark); border: 1.5px solid var(--amber); }
+    .n-rfq     { background: var(--green); color: var(--white); }
+    .n-contact { background: var(--amber); color: var(--white); }
+
+    /* ── Connectors ── */
+    .line { width: 2px; flex-shrink: 0; margin: 0 auto; }
+    .line-ems   { background: var(--blue); }
+    .line-osat  { background: var(--teal); }
+    .line-amber { background: var(--amber); }
+    .line-green { background: var(--green); }
+
+    .arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; margin: 0 auto; flex-shrink: 0; }
+    .arr-ems   { border-top: 8px solid var(--blue); }
+    .arr-osat  { border-top: 8px solid var(--teal); }
+    .arr-amber { border-top: 8px solid var(--amber); }
+    .arr-green { border-top: 8px solid var(--green); }
+
+    .sp { flex-shrink: 0; }
+
+    /* ── Example chips ── */
+    .chips { display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
+    .chip  { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 10px; }
+    .chip-b { background: var(--blue-light);  color: var(--blue-dark);  border: 1px solid var(--blue); }
+    .chip-t { background: var(--teal-light);  color: var(--teal-dark);  border: 1px solid var(--teal); }
+    .chip-a { background: var(--amber-light); color: var(--amber-dark); border: 1px solid var(--amber); }
+
+    /* ── Cross-link columns ── */
+    .xlink-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 46px;
+    }
+    .xlink-row {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    .xlink-line { flex: 1; border-top: 2px dashed var(--gray-300); }
+    .xlink-label {
+      font-size: 9px; color: var(--gray-500); text-align: center;
+      white-space: nowrap; padding: 2px 0; line-height: 1.3;
+    }
+    .xlink-arrow-r {
+      width: 0; height: 0;
+      border-top: 4px solid transparent; border-bottom: 4px solid transparent;
+      border-left: 7px solid var(--gray-500); flex-shrink: 0;
+    }
+    .xlink-arrow-l {
+      width: 0; height: 0;
+      border-top: 4px solid transparent; border-bottom: 4px solid transparent;
+      border-right: 7px solid var(--gray-500); flex-shrink: 0;
+    }
+
+    /* ── Bottom converge ── */
+    .bottom-wrap {
+      max-width: 1060px;
+      margin: 24px auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .converge-bar {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      height: 36px;
+    }
+    .converge-bar .h-line {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: var(--green);
+    }
+    .converge-bar .v-left {
+      position: absolute; top: 0; left: 0;
+      width: 2px; height: 16px; background: var(--green);
+    }
+    .converge-bar .v-mid {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 2px; height: 36px; background: var(--green);
+    }
+    .converge-bar .v-right {
+      position: absolute; top: 0; right: 0;
+      width: 2px; height: 16px; background: var(--green);
+    }
+
+    /* ── Note box ── */
+    .note-box {
+      margin-top: 8px;
+      font-size: 10px;
+      color: var(--gray-500);
+      text-align: center;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Hana Microelectronics — Visitor Pathway Map</h1>
+    <p>Three buyer types and how they move through the website</p>
+    <span class="wf-badge">Working draft — not finalised</span>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div> Type 1: EMS buyer (procurement)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--teal)"></div> Type 2: OSAT / NPI buyer (technical engineer)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div> Type 3: Location-specific buyer</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Conversion (RFQ / Contact)</div>
+    <div class="legend-item"><div class="legend-dash"></div> Cross-link (optional)</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       THREE-COLUMN MAP
+  ═══════════════════════════════════════════ -->
+  <div class="map-wrap">
+
+    <!-- ══════════ COL 1: EMS ══════════ -->
+    <div class="col">
+      <span class="col-label lbl-ems">Type 1 — EMS Buyer</span>
+      <span class="col-desc">Procurement manager searching by market. Knows their industry, not the manufacturing process.</span>
+
+      <div class="node n-entry">
+        <span class="node-title">Entry</span>
+        <span class="node-sub">Google · LinkedIn · Trade fair</span>
+      </div>
+      <div class="line line-ems sp" style="height:14px"></div>
+      <div class="arrow arr-ems"></div>
+
+      <div class="node n-home" style="margin-top:6px">
+        <span class="node-title">Homepage</span>
+        <span class="node-sub">Lands via brand or broad search</span>
+      </div>
+      <div class="line line-ems sp" style="height:14px;margin-top:4px"></div>
+      <div class="arrow arr-ems"></div>
+
+      <div class="node n-mhub" style="margin-top:6px">
+        <span class="node-title">Markets Hub</span>
+        <span class="node-sub">/markets/ — 9 market tiles</span>
+      </div>
+      <div class="line line-ems sp" style="height:14px;margin-top:4px"></div>
+      <div class="arrow arr-ems"></div>
+
+      <div class="node n-mpillar" style="margin-top:6px">
+        <span class="node-title">Market Pillar Page</span>
+        <span class="node-sub">e.g. /markets/automotive/</span>
+        <div class="chips">
+          <span class="chip chip-b">Automotive</span>
+          <span class="chip chip-b">Medical</span>
+          <span class="chip chip-b">Industrial</span>
+          <span class="chip chip-b">Access Control</span>
+        </div>
+      </div>
+      <div style="width:100%;margin-top:4px;display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:2px;height:10px;background:var(--blue)"></div>
+        <div style="width:100%;display:flex;align-items:center">
+          <div style="flex:1"></div>
+          <div style="width:2px;height:18px;background:var(--blue)"></div>
+          <div style="flex:1;display:flex;align-items:center;padding-left:3px">
+            <div style="flex:1;border-top:2px dashed var(--green)"></div>
+            <div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid var(--green);flex-shrink:0"></div>
+            <div style="background:var(--green);color:var(--white);font-size:10px;font-weight:700;padding:4px 7px;border-radius:4px;line-height:1.3;text-align:center;white-space:nowrap;flex-shrink:0;margin-left:2px">RFQ /<br>Contact</div>
+          </div>
+        </div>
+        <div style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--blue)"></div>
+      </div>
+
+      <div class="node n-msub" style="margin-top:6px">
+        <span class="node-title">Market Sub-page</span>
+        <span class="node-sub">e.g. /markets/automotive/power-modules/</span>
+        <div class="chips">
+          <span class="chip chip-b">Power Modules</span>
+          <span class="chip chip-b">Sensor Assembly</span>
+          <span class="chip chip-b">RFID Tire Tags</span>
+        </div>
+      </div>
+      <div class="line line-ems sp" style="height:14px;margin-top:4px"></div>
+      <div class="arrow arr-ems"></div>
+
+      <div class="node n-rfq" style="margin-top:6px">
+        <span class="node-title">RFQ Portal</span>
+        <span class="node-sub">Submit inquiry</span>
+      </div>
+    </div>
+
+    <!-- ══════════ XLINK COL 1–2 ══════════ -->
+    <div class="xlink-col">
+      <!-- Spacer to pillar level -->
+      <div class="sp" style="height:193px"></div>
+
+      <!-- Cross-links at pillar level -->
+      <div style="width:100%;display:flex;flex-direction:column;align-items:center">
+        <div class="xlink-row">
+          <div class="xlink-arrow-l"></div>
+          <div class="xlink-line"></div>
+          <div class="xlink-arrow-r"></div>
+        </div>
+        <div class="xlink-label">cross-links</div>
+      </div>
+
+      <div class="sp" style="height:148px"></div>
+
+      <!-- Cross-links at sub-page level -->
+      <div style="width:100%;display:flex;flex-direction:column;align-items:center">
+        <div class="xlink-row">
+          <div class="xlink-arrow-l"></div>
+          <div class="xlink-line"></div>
+          <div class="xlink-arrow-r"></div>
+        </div>
+        <div class="xlink-label">cross-links</div>
+      </div>
+    </div>
+
+    <!-- ══════════ COL 2: OSAT ══════════ -->
+    <div class="col">
+      <span class="col-label lbl-osat">Type 2 — OSAT / NPI Buyer</span>
+      <span class="col-desc">OSAT buyer, NPI engineer, or technical buyer searching for a specific process or capability. Not market-specific — they think in terms of "I need this process."</span>
+
+      <div class="node n-entry">
+        <span class="node-title">Entry</span>
+        <span class="node-sub">Google — specific capability search</span>
+      </div>
+      <div class="line line-osat sp" style="height:14px"></div>
+      <div class="arrow arr-osat"></div>
+
+      <div class="node n-home" style="margin-top:6px;background:var(--teal-dark);color:var(--white)">
+        <span class="node-title">Homepage or direct landing</span>
+        <span class="node-sub">May skip homepage entirely</span>
+      </div>
+      <div class="line line-osat sp" style="height:14px;margin-top:4px"></div>
+      <div class="arrow arr-osat"></div>
+
+      <div class="node n-chub" style="margin-top:6px">
+        <span class="node-title">Capabilities Hub</span>
+        <span class="node-sub">/capabilities/ — 5 capability tiles</span>
+      </div>
+      <div class="line line-osat sp" style="height:14px;margin-top:4px"></div>
+      <div class="arrow arr-osat"></div>
+
+      <div class="node n-cpillar" style="margin-top:6px">
+        <span class="node-title">Capability Parent Page</span>
+        <span class="node-sub">e.g. /capabilities/ic-assembly-test/</span>
+        <div class="chips">
+          <span class="chip chip-t">IC Assembly & Test</span>
+          <span class="chip chip-t">PCBA & Box Build</span>
+          <span class="chip chip-t">RFID</span>
+        </div>
+      </div>
+      <div style="width:100%;margin-top:4px;display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:2px;height:10px;background:var(--teal)"></div>
+        <div style="width:100%;display:flex;align-items:center">
+          <div style="flex:1"></div>
+          <div style="width:2px;height:18px;background:var(--teal)"></div>
+          <div style="flex:1;display:flex;align-items:center;padding-left:3px">
+            <div style="flex:1;border-top:2px dashed var(--green)"></div>
+            <div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid var(--green);flex-shrink:0"></div>
+            <div style="background:var(--green);color:var(--white);font-size:10px;font-weight:700;padding:4px 7px;border-radius:4px;line-height:1.3;text-align:center;white-space:nowrap;flex-shrink:0;margin-left:2px">RFQ /<br>Contact</div>
+          </div>
+        </div>
+        <div style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--teal)"></div>
+      </div>
+
+      <div class="node n-csub" style="margin-top:6px">
+        <span class="node-title">Capability Sub-pillar Page</span>
+        <span class="node-sub">e.g. /capabilities/rfid/rfid-tire-tags/</span>
+        <div class="chips">
+          <span class="chip chip-t">System in Package</span>
+          <span class="chip chip-t">Flip Chip</span>
+          <span class="chip chip-t">RFID Inlay</span>
+        </div>
+      </div>
+      <div class="line line-osat sp" style="height:14px;margin-top:4px"></div>
+      <div class="arrow arr-osat"></div>
+
+      <div class="node n-rfq" style="margin-top:6px">
+        <span class="node-title">RFQ Portal</span>
+        <span class="node-sub">Submit inquiry</span>
+      </div>
+    </div>
+
+    <!-- ══════════ XLINK COL 2–3 ══════════ -->
+    <div class="xlink-col">
+      <!-- Spacer to pillar level -->
+      <div class="sp" style="height:193px"></div>
+
+      <!-- Cross-links at pillar level -->
+      <div style="width:100%;display:flex;flex-direction:column;align-items:center">
+        <div class="xlink-row">
+          <div class="xlink-arrow-l"></div>
+          <div class="xlink-line"></div>
+          <div class="xlink-arrow-r"></div>
+        </div>
+        <div class="xlink-label">cross-links</div>
+      </div>
+
+      <div class="sp" style="height:148px"></div>
+
+      <!-- Cross-links at sub-pillar level -->
+      <div style="width:100%;display:flex;flex-direction:column;align-items:center">
+        <div class="xlink-row">
+          <div class="xlink-arrow-l"></div>
+          <div class="xlink-line"></div>
+          <div class="xlink-arrow-r"></div>
+        </div>
+        <div class="xlink-label">cross-links</div>
+      </div>
+    </div>
+
+    <!-- ══════════ COL 3: LOCATION-SPECIFIC ══════════ -->
+    <div class="col">
+      <span class="col-label lbl-loc">Type 3 — Location-Specific</span>
+      <span class="col-desc">Buyer searching for a capability in a specific country, e.g. "PCBA assembly Thailand".</span>
+
+      <div class="node n-entry">
+        <span class="node-title">Entry</span>
+        <span class="node-sub">Google — capability + country search</span>
+      </div>
+      <div class="line line-amber sp" style="height:14px"></div>
+      <div class="arrow arr-amber"></div>
+
+      <div class="node n-lhub" style="margin-top:6px">
+        <span class="node-title">Location Page (direct landing)</span>
+        <span class="node-sub">Lands from search result — may skip hub</span>
+      </div>
+      <div class="line line-amber sp" style="height:14px;margin-top:4px"></div>
+      <div class="arrow arr-amber"></div>
+
+      <div class="node n-lcountry" style="margin-top:6px">
+        <span class="node-title">Country Page</span>
+        <span class="node-sub">Capabilities at that location · Factory images</span>
+        <div class="chips">
+          <span class="chip chip-a">Thailand</span>
+          <span class="chip chip-a">USA</span>
+          <span class="chip chip-a">China</span>
+          <span class="chip chip-a">Cambodia</span>
+        </div>
+      </div>
+
+      <!-- Fork: Thailand splits, others go direct -->
+      <div style="position:relative;width:76%;height:18px;margin-top:4px">
+        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:2px;height:8px;background:var(--amber)"></div>
+        <div style="position:absolute;top:8px;left:12%;right:12%;height:2px;background:var(--amber)"></div>
+        <div style="position:absolute;top:8px;left:12%;width:2px;height:10px;background:var(--amber)"></div>
+        <div style="position:absolute;top:8px;right:12%;width:2px;height:10px;background:var(--amber)"></div>
+      </div>
+
+      <!-- Two facility branches -->
+      <div style="display:flex;width:100%;gap:8px;align-items:flex-start">
+
+        <!-- Thailand: two facilities side by side -->
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center">
+          <div style="font-size:9px;font-weight:700;color:var(--amber-dark);text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px">Thailand</div>
+          <div style="display:flex;gap:5px;width:100%">
+            <div class="node n-lfac" style="flex:1;padding:8px 6px">
+              <span class="node-title" style="font-size:11px">Ayutthaya</span>
+              <span class="node-sub">OSAT facility</span>
+            </div>
+            <div class="node n-lfac" style="flex:1;padding:8px 6px">
+              <span class="node-title" style="font-size:11px">Lamphun</span>
+              <span class="node-sub">EMS &amp; OSAT facility</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- USA, China, Cambodia: one facility each -->
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center">
+          <div style="font-size:9px;font-weight:700;color:var(--amber-dark);text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px">USA · China · Cambodia</div>
+          <div class="node n-lfac" style="width:100%;padding:8px 10px">
+            <span class="node-title" style="font-size:11px">Facility Page</span>
+            <span class="node-sub">One facility per country</span>
+            <div class="chips" style="margin-top:5px">
+              <span class="chip chip-a">Ohio</span>
+              <span class="chip chip-a">Jiaxing</span>
+              <span class="chip chip-a">Koh Kong</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Converge back to single path -->
+      <div style="position:relative;width:76%;height:18px;margin-top:6px">
+        <div style="position:absolute;top:0;left:12%;width:2px;height:10px;background:var(--amber)"></div>
+        <div style="position:absolute;top:0;right:12%;width:2px;height:10px;background:var(--amber)"></div>
+        <div style="position:absolute;top:10px;left:12%;right:12%;height:2px;background:var(--amber)"></div>
+        <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:2px;height:8px;background:var(--amber)"></div>
+      </div>
+      <div style="width:100%;display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:2px;height:10px;background:var(--amber)"></div>
+        <div style="width:100%;display:flex;align-items:center">
+          <div style="flex:1"></div>
+          <div style="width:2px;height:18px;background:var(--amber)"></div>
+          <div style="flex:1;display:flex;align-items:center;padding-left:3px">
+            <div style="flex:1;border-top:2px dashed var(--green)"></div>
+            <div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid var(--green);flex-shrink:0"></div>
+            <div style="background:var(--green);color:var(--white);font-size:10px;font-weight:700;padding:4px 7px;border-radius:4px;line-height:1.3;text-align:center;white-space:nowrap;flex-shrink:0;margin-left:2px">RFQ /<br>Contact</div>
+          </div>
+        </div>
+        <div style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--amber)"></div>
+      </div>
+
+      <!-- Capability sections on the page -->
+      <div class="node n-lfac" style="margin-top:6px">
+        <span class="node-title">Capability sections on page</span>
+        <span class="node-sub">H2 sections targeting capability + country keywords</span>
+        <div class="chips">
+          <span class="chip chip-a">PCBA Thailand</span>
+          <span class="chip chip-a">RFID USA</span>
+          <span class="chip chip-a">IC Assembly Thailand</span>
+        </div>
+      </div>
+      <div style="width:100%;margin-top:4px;display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:2px;height:10px;background:var(--amber)"></div>
+        <div style="width:100%;display:flex;align-items:center">
+          <div style="flex:1"></div>
+          <div style="width:2px;height:18px;background:var(--amber)"></div>
+          <div style="flex:1;display:flex;align-items:center;padding-left:3px">
+            <div style="flex:1;border-top:2px dashed var(--green)"></div>
+            <div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid var(--green);flex-shrink:0"></div>
+            <div style="background:var(--green);color:var(--white);font-size:10px;font-weight:700;padding:4px 7px;border-radius:4px;line-height:1.3;text-align:center;white-space:nowrap;flex-shrink:0;margin-left:2px">RFQ /<br>Contact</div>
+          </div>
+        </div>
+        <div style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--amber)"></div>
+      </div>
+
+      <div class="node n-contact" style="margin-top:6px">
+        <span class="node-title">Contact / Leave Email</span>
+        <span class="node-sub">Request capability list or arrange a call</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       BOTTOM: Summary
+  ═══════════════════════════════════════════ -->
+  <div class="bottom-wrap">
+
+    <div style="
+      margin-top: 36px;
+      padding: 20px 28px;
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1.5px solid var(--gray-300);
+      max-width: 740px;
+      width: 100%;
+    ">
+      <div style="font-weight:700;font-size:14px;margin-bottom:10px;color:var(--blue-dark);text-align:center">
+        How the three pathways connect
+      </div>
+      <div style="font-size:12px;color:var(--gray-700);line-height:1.7">
+        <div style="display:flex;gap:10px;margin-bottom:6px">
+          <div style="width:13px;height:13px;border-radius:3px;background:var(--blue);flex-shrink:0;margin-top:3px"></div>
+          <div><strong>Markets</strong> pages cross-link to relevant <strong>Capabilities</strong> and <strong>Locations</strong>. EMS buyers can also browse Capabilities from the homepage if they choose.</div>
+        </div>
+        <div style="display:flex;gap:10px;margin-bottom:6px">
+          <div style="width:13px;height:13px;border-radius:3px;background:var(--teal);flex-shrink:0;margin-top:3px"></div>
+          <div><strong>Capabilities</strong> pages cross-link to relevant <strong>Markets</strong> and <strong>Locations</strong>. OSAT buyers and NPI engineers often land directly on a sub-pillar page from search — they're confirming Hana has the specific process they need before making contact. This is Hana's core strength: breadth of capability across EMS and OSAT.</div>
+        </div>
+        <div style="display:flex;gap:10px">
+          <div style="width:13px;height:13px;border-radius:3px;background:var(--amber);flex-shrink:0;margin-top:3px"></div>
+          <div><strong>Locations</strong> pages cross-link to <strong>Markets</strong> and <strong>Capabilities</strong>. Location-specific buyers land directly from "capability + country" searches. RFQ and Contact available at facility page and capability section level.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="text-align:center;margin-top:36px;font-size:11px;color:var(--gray-500)">
+    Hana Microelectronics EU · Website redesign working documents · May 2026
+  </p>
+
+</body>
+</html>
