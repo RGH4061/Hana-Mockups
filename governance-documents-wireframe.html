@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Governance Documents | Hana Microelectronics Investor Relations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@600;700&family=Inter:wght@400;500;600;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Brand — Blue */
+    --hana-blue:      #1283DD;
+    --hana-blue-deep: #0E4A7C;
+    --hana-blue-soft: #4E9BDA;
+    --hana-blue-tint: #E5EEF5;
+
+    /* Surface */
+    --bg:      #F7F8FA;
+    --surface: #EBEEF2;
+    --line:    #D2D7DE;
+
+    /* Text */
+    --ink:   #0E1116;
+    --ink-2: #444B54;
+    --ink-3: #6B7280;
+
+    --max: 1080px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-2);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Top bar */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 32px;
+  }
+  .logo {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .logo .mark {
+    display: inline-block;
+    width: 22px; height: 22px;
+    background: var(--hana-blue);
+    border-radius: 4px;
+    margin-right: 10px;
+    vertical-align: -5px;
+  }
+  .topnav {
+    display: flex; gap: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-2);
+  }
+  .topnav a { color: inherit; text-decoration: none; }
+  .topnav a:hover { color: var(--hana-blue); }
+  .topnav a.current { color: var(--hana-blue); font-weight: 600; }
+
+  /* Hero — dark banner (full-bleed) */
+  .hero {
+    background: var(--hana-blue-deep);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  /* accent bar bottom */
+  .hero::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: 0;
+    height: 3px;
+    background: var(--hana-blue);
+  }
+  .hero-inner {
+    position: relative;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 22px 32px 36px;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    column-gap: 40px;
+    align-items: end;
+  }
+  .hero-copy { grid-column: 1; align-self: end; }
+  .hero-texture {
+    grid-column: 2;
+    align-self: stretch;
+    position: relative;
+    min-height: 180px;
+    pointer-events: none;
+  }
+  .hero-texture svg {
+    position: absolute;
+    right: -32px;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .crumbs {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 22px;
+  }
+  .crumbs a { color: inherit; text-decoration: none; }
+  .crumbs a:hover { color: #fff; }
+  .crumbs .sep { margin: 0 8px; color: rgba(255,255,255,0.25); }
+  .crumbs span:last-child { color: #fff; }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 11px;
+    color: var(--hana-blue-tint);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin: 0 0 14px;
+    max-width: 620px;
+  }
+  .lede {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.78);
+    max-width: 560px;
+    margin: 0;
+  }
+
+  /* Two-column layout */
+  .layout {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 56px 32px 40px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 64px;
+  }
+  /* Thin divider before the CTA strip */
+  .body-divider {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .body-divider hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 0;
+  }
+
+  /* Sticky side nav */
+  aside.sectionnav {
+    position: sticky;
+    top: 92px;
+    align-self: start;
+  }
+  .sectionnav .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-3);
+    padding-bottom: 12px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+  .sectionnav ol {
+    list-style: none; padding: 0; margin: 0;
+  }
+  .sectionnav a {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 10px 14px;
+    border-left: 2px solid transparent;
+    margin-left: -2px;
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .sectionnav a:hover {
+    color: var(--hana-blue);
+    background: var(--hana-blue-tint);
+  }
+  .sectionnav a.active {
+    color: var(--hana-blue-deep);
+    border-left-color: var(--hana-blue);
+    background: var(--hana-blue-tint);
+    font-weight: 600;
+  }
+  .sectionnav .num {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ink-3);
+    letter-spacing: -0.005em;
+    flex-shrink: 0;
+  }
+  .sectionnav a.active .num { color: var(--hana-blue); }
+
+  /* Content sections */
+  main.content { min-width: 0; }
+  section.doc {
+    padding: 36px 0 44px;
+    border-top: 1px solid var(--line);
+  }
+  section.doc:first-of-type { border-top: 0; padding-top: 8px; }
+  section.doc h2 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0 0 14px;
+    max-width: 720px;
+  }
+  section.doc p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-2);
+    max-width: 680px;
+    margin: 0 0 22px;
+  }
+
+  /* Document list */
+  .doclist {
+    display: grid; gap: 10px;
+    max-width: 680px;
+  }
+  .docrow {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 20px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .docrow:hover {
+    border-color: var(--hana-blue-soft);
+    background: #fff;
+  }
+  .docrow:hover .title { color: var(--hana-blue-deep); }
+
+  .docicon {
+    width: 44px; height: 52px;
+    display: block;
+    flex-shrink: 0;
+  }
+  .docmeta .title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.35;
+    color: var(--ink);
+    transition: color 0.15s;
+  }
+  .docmeta .sub {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-3);
+    margin-top: 4px;
+    letter-spacing: -0.005em;
+  }
+
+  /* Buttons — per design system §3 */
+  .btn {
+    display: inline-block;
+    padding: 11px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--hana-blue);
+    border: 1px solid var(--hana-blue);
+  }
+  .btn-secondary:hover {
+    border-color: var(--hana-blue-deep);
+    color: var(--hana-blue-deep);
+  }
+
+  /* Related / see-also strip */
+  .related {
+    margin-top: 32px;
+    padding: 18px 22px;
+    background: var(--surface);
+    border-left: 3px solid var(--hana-blue);
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+    color: var(--ink-2);
+    max-width: 680px;
+  }
+  .related strong {
+    color: var(--ink);
+    font-weight: 600;
+    margin-right: 4px;
+  }
+  .related a {
+    color: var(--hana-blue);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .related a:hover {
+    color: var(--hana-blue-deep);
+    text-decoration: underline;
+  }
+  .related .sep { color: var(--line); margin: 0 8px; }
+
+  /* CTA strip — thin bookend at bottom */
+  .ctastrip {
+    background: var(--hana-blue-deep);
+    color: #fff;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+  .ctastrip::before {
+    content: "";
+    position: absolute; left: 0; right: 0; top: 0;
+    height: 3px;
+    background: var(--hana-blue);
+  }
+  .ctastrip-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 22px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .ctastrip-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.92);
+  }
+  .ctastrip-text strong {
+    font-weight: 600;
+    color: #fff;
+    margin-right: 6px;
+  }
+  .ctastrip .btn-on-dark {
+    background: #fff;
+    color: var(--hana-blue-deep);
+    border: none;
+    padding: 11px 22px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+  }
+  .ctastrip .btn-on-dark:hover {
+    background: var(--hana-blue);
+    color: #fff;
+  }
+  @media (max-width: 720px) {
+    .ctastrip-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 24px;
+    }
+  }
+
+  /* Footer placeholder (wireframe) */
+  .footer-placeholder {
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    color: var(--ink-3);
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: -0.005em;
+    text-align: center;
+    padding: 56px 32px;
+  }
+  .urlhint {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 12px 32px 24px;
+    color: var(--ink-3);
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: -0.005em;
+  }
+
+  /* Responsive */
+  @media (max-width: 880px) {
+    .layout { grid-template-columns: 1fr; gap: 32px; padding: 8px 24px 64px; }
+    aside.sectionnav {
+      position: relative; top: 0;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .sectionnav ol { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      padding: 20px 24px 32px;
+    }
+    .hero-texture { display: none; }
+    h1 { font-size: 36px; }
+    section.doc h2 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="logo"><span class="mark"></span>HANA</div>
+      <nav class="topnav">
+        <a href="#">Why Hana</a>
+        <a href="#">Markets</a>
+        <a href="#">Capabilities</a>
+        <a href="#">Locations</a>
+        <a href="#">Quality</a>
+        <a href="#">About</a>
+        <a href="#" class="current">Investors</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="#">Home</a>
+          <span class="sep">/</span>
+          <a href="#">Investor Relations</a>
+          <span class="sep">/</span>
+          <span>Governance Documents</span>
+        </nav>
+        <div class="eyebrow">Investor Relations · Governance</div>
+        <h1>Governance Documents</h1>
+        <p class="lede">
+          Corporate governance documents for Hana Microelectronics Public Company Limited,
+          listed on the Stock Exchange of Thailand. Articles of Association, committee charters,
+          governance policies, and anti-corruption commitment.
+        </p>
+      </div>
+      <div class="hero-texture" aria-hidden="true">
+        <svg viewBox="0 0 400 240" preserveAspectRatio="xMaxYMid slice">
+          <defs>
+            <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#fff" stop-opacity="0" />
+              <stop offset="35%" stop-color="#fff" stop-opacity="1" />
+              <stop offset="100%" stop-color="#fff" stop-opacity="1" />
+            </linearGradient>
+            <mask id="fademask">
+              <rect x="0" y="0" width="400" height="240" fill="url(#fade)" />
+            </mask>
+          </defs>
+          <g mask="url(#fademask)">
+            <!-- background dot grid -->
+            <g fill="rgba(255,255,255,0.10)">
+              <!-- 8 cols x 5 rows of small dots -->
+              <circle cx="40"  cy="30"  r="1.2"/>
+              <circle cx="90"  cy="30"  r="1.2"/>
+              <circle cx="140" cy="30"  r="1.2"/>
+              <circle cx="190" cy="30"  r="1.2"/>
+              <circle cx="240" cy="30"  r="1.2"/>
+              <circle cx="290" cy="30"  r="1.2"/>
+              <circle cx="340" cy="30"  r="1.2"/>
+              <circle cx="390" cy="30"  r="1.2"/>
+              <circle cx="40"  cy="80"  r="1.2"/>
+              <circle cx="90"  cy="80"  r="1.2"/>
+              <circle cx="140" cy="80"  r="1.2"/>
+              <circle cx="190" cy="80"  r="1.2"/>
+              <circle cx="240" cy="80"  r="1.2"/>
+              <circle cx="290" cy="80"  r="1.2"/>
+              <circle cx="340" cy="80"  r="1.2"/>
+              <circle cx="390" cy="80"  r="1.2"/>
+              <circle cx="40"  cy="130" r="1.2"/>
+              <circle cx="90"  cy="130" r="1.2"/>
+              <circle cx="140" cy="130" r="1.2"/>
+              <circle cx="190" cy="130" r="1.2"/>
+              <circle cx="240" cy="130" r="1.2"/>
+              <circle cx="290" cy="130" r="1.2"/>
+              <circle cx="340" cy="130" r="1.2"/>
+              <circle cx="390" cy="130" r="1.2"/>
+              <circle cx="40"  cy="180" r="1.2"/>
+              <circle cx="90"  cy="180" r="1.2"/>
+              <circle cx="140" cy="180" r="1.2"/>
+              <circle cx="190" cy="180" r="1.2"/>
+              <circle cx="240" cy="180" r="1.2"/>
+              <circle cx="290" cy="180" r="1.2"/>
+              <circle cx="340" cy="180" r="1.2"/>
+              <circle cx="390" cy="180" r="1.2"/>
+              <circle cx="40"  cy="230" r="1.2"/>
+              <circle cx="90"  cy="230" r="1.2"/>
+              <circle cx="140" cy="230" r="1.2"/>
+              <circle cx="190" cy="230" r="1.2"/>
+              <circle cx="240" cy="230" r="1.2"/>
+              <circle cx="290" cy="230" r="1.2"/>
+              <circle cx="340" cy="230" r="1.2"/>
+              <circle cx="390" cy="230" r="1.2"/>
+            </g>
+
+            <!-- circuit traces -->
+            <g stroke="rgba(255,255,255,0.22)" fill="none" stroke-width="1.25" stroke-linecap="square">
+              <path d="M 0 60 L 110 60 L 110 105"/>
+              <path d="M 0 175 L 90 175 L 90 130 L 175 130"/>
+              <path d="M 260 30 L 260 80 L 320 80"/>
+              <path d="M 200 200 L 300 200 L 300 155 L 380 155"/>
+              <path d="M 0 105 L 60 105"/>
+              <path d="M 320 30 L 380 30"/>
+            </g>
+
+            <!-- via nodes on trace endpoints -->
+            <g fill="rgba(255,255,255,0.55)">
+              <circle cx="110" cy="60"  r="2.5"/>
+              <circle cx="110" cy="105" r="2.5"/>
+              <circle cx="90"  cy="175" r="2.5"/>
+              <circle cx="90"  cy="130" r="2.5"/>
+              <circle cx="175" cy="130" r="2.5"/>
+              <circle cx="260" cy="30"  r="2.5"/>
+              <circle cx="260" cy="80"  r="2.5"/>
+              <circle cx="320" cy="80"  r="2.5"/>
+              <circle cx="300" cy="200" r="2.5"/>
+              <circle cx="300" cy="155" r="2.5"/>
+              <circle cx="60"  cy="105" r="2.5"/>
+              <circle cx="320" cy="30"  r="2.5"/>
+            </g>
+
+            <!-- IC chip -->
+            <g>
+              <rect x="195" y="68" width="80" height="56" rx="2"
+                    fill="rgba(255,255,255,0.04)"
+                    stroke="rgba(255,255,255,0.55)" stroke-width="1.25"/>
+              <!-- pins top/bottom -->
+              <g stroke="rgba(255,255,255,0.45)" stroke-width="1.25">
+                <line x1="208" y1="64" x2="208" y2="68"/>
+                <line x1="220" y1="64" x2="220" y2="68"/>
+                <line x1="232" y1="64" x2="232" y2="68"/>
+                <line x1="244" y1="64" x2="244" y2="68"/>
+                <line x1="256" y1="64" x2="256" y2="68"/>
+                <line x1="208" y1="124" x2="208" y2="128"/>
+                <line x1="220" y1="124" x2="220" y2="128"/>
+                <line x1="232" y1="124" x2="232" y2="128"/>
+                <line x1="244" y1="124" x2="244" y2="128"/>
+                <line x1="256" y1="124" x2="256" y2="128"/>
+                <!-- pins left/right -->
+                <line x1="191" y1="78"  x2="195" y2="78"/>
+                <line x1="191" y1="90"  x2="195" y2="90"/>
+                <line x1="191" y1="102" x2="191" y2="102"/>
+                <line x1="191" y1="114" x2="195" y2="114"/>
+                <line x1="275" y1="78"  x2="279" y2="78"/>
+                <line x1="275" y1="90"  x2="279" y2="90"/>
+                <line x1="275" y1="102" x2="279" y2="102"/>
+                <line x1="275" y1="114" x2="279" y2="114"/>
+              </g>
+              <!-- pin-1 indicator -->
+              <circle cx="203" cy="76" r="1.4" fill="rgba(255,255,255,0.65)"/>
+              <!-- subtle part-number text -->
+              <text x="235" y="100"
+                    text-anchor="middle"
+                    font-family="'IBM Plex Mono', monospace"
+                    font-size="7"
+                    letter-spacing="0.06em"
+                    fill="rgba(255,255,255,0.45)">HANA · IC</text>
+            </g>
+
+            <!-- accent thin line right edge -->
+            <line x1="395" y1="0" x2="395" y2="240" stroke="rgba(18,131,221,0.55)" stroke-width="1"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <aside class="sectionnav" aria-label="Page contents">
+      <div class="label">Page contents</div>
+      <ol>
+        <li><a href="#articles-of-association"><span class="num">—</span>Articles of Association</a></li>
+        <li><a href="#charters"><span class="num">—</span>Committee Charters</a></li>
+        <li><a href="#cg-policies"><span class="num">—</span>Corporate Governance Policies</a></li>
+        <li><a href="#anti-corruption"><span class="num">—</span>Anti-Corruption</a></li>
+      </ol>
+    </aside>
+
+    <main class="content">
+
+      <section class="doc" id="articles-of-association">
+        <h2>Articles of Association</h2>
+        <p>
+          The Articles of Association govern the internal operation of Hana Microelectronics Public Company Limited
+          as a SET-listed company — including shareholder rights, board composition, and voting procedures.
+          Last amended at the Annual General Meeting.
+        </p>
+        <div class="doclist">
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Articles of Association (English)</div>
+              <div class="sub">1.2 MB · 24 pages · Updated Apr 2026</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Articles of Association (Thai)</div>
+              <div class="sub">1.1 MB · 22 pages · Updated Apr 2026</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="doc" id="charters">
+        <h2>Committee Charters</h2>
+        <p>
+          Charters defining the authority, composition, and responsibilities of the Board and its committees.
+          Each committee operates under a written charter reviewed and approved annually.
+        </p>
+        <div class="doclist">
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Board of Directors Charter</div>
+              <div class="sub">320 KB · Updated 2025</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Audit Committee Charter</div>
+              <div class="sub">280 KB · Updated 2025</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Nomination &amp; Remuneration Committee Charter</div>
+              <div class="sub">260 KB · Updated 2025</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Risk Management Committee Charter</div>
+              <div class="sub">240 KB · Updated 2025</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="doc" id="cg-policies">
+        <h2>Corporate Governance Policies</h2>
+        <p>
+          The policies that translate our governance framework into day-to-day practice:
+          conflicts of interest, related-party transactions, insider trading, whistleblowing,
+          and shareholder communication.
+        </p>
+        <div class="doclist">
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Corporate Governance Policy</div>
+              <div class="sub">480 KB · Updated 2025</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Code of Business Conduct</div>
+              <div class="sub">410 KB · Updated 2025</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Whistleblower Policy</div>
+              <div class="sub">220 KB · Updated 2025</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+        </div>
+        <div class="related">
+          <strong>See also:</strong>
+          <a href="#">Sustainability &amp; ESG</a>
+          <span class="sep">·</span>
+          <a href="#">Investor FAQ</a>
+        </div>
+      </section>
+
+      <section class="doc" id="anti-corruption">
+        <h2>Anti-Corruption</h2>
+        <p>
+          Hana Microelectronics is a certified member of Thailand's Private Sector Collective
+          Action Coalition Against Corruption (CAC). Our anti-corruption policy applies to
+          directors, employees, suppliers, and business partners across all manufacturing
+          operations in Thailand, China, and Cambodia.
+        </p>
+        <div class="doclist">
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Anti-Corruption Policy</div>
+              <div class="sub">360 KB · Updated 2025</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">CAC Certification</div>
+              <div class="sub">180 KB · Re-certified 2024</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="body-divider"><hr /></div>
+
+  <section class="ctastrip" aria-label="Investor events and contact">
+    <div class="ctastrip-inner">
+      <div class="ctastrip-text">
+        <strong>Join us at an upcoming investor event</strong>
+        or get in touch with our investor relations team directly.
+      </div>
+      <a href="/investor-relations/events-contact" class="btn-on-dark">Investor Events &amp; Contact</a>
+    </div>
+  </section>
+
+  <div class="urlhint">
+    /investor-relations/governance-documents · anchors: #articles-of-association · #charters · #cg-policies · #anti-corruption
+  </div>
+
+  <div class="footer-placeholder">[ Site footer goes here ]</div>
+
+<script>
+  const links = Array.from(document.querySelectorAll('.sectionnav a'));
+  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+  const setActive = (id) => {
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+  };
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.filter(e => e.isIntersecting);
+    if (!visible.length) return;
+    visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    setActive(visible[0].target.id);
+  }, { rootMargin: '-90px 0px -60% 0px', threshold: [0, 1] });
+  sections.forEach(s => s && observer.observe(s));
+  if (sections[0]) setActive(sections[0].id);
+</script>
+
+</body>
+</html>
