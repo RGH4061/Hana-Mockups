@@ -250,6 +250,16 @@
     margin: 0 0 14px;
     max-width: 720px;
   }
+  section.doc h3 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 12px;
+    max-width: 720px;
+  }
   section.doc p {
     font-size: 16px;
     line-height: 1.65;
@@ -257,6 +267,9 @@
     max-width: 680px;
     margin: 0 0 22px;
   }
+  section.doc p + p { margin-top: -6px; }
+  section.doc h3 + p { margin-top: 0; }
+  section.doc .doclist { margin-top: 10px; }
 
   /* Document list */
   .doclist {
@@ -658,26 +671,8 @@
                     letter-spacing="0.06em">PDF</text>
             </svg>
             <div class="docmeta">
-              <div class="title">Articles of Association (English)</div>
-              <div class="sub">1.2 MB · 24 pages · Updated Apr 2026</div>
-            </div>
-            <span class="btn btn-secondary">Download</span>
-          </a>
-          <a class="docrow" href="#">
-            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
-              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
-                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
-              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
-                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
-              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
-              <text x="22" y="37" text-anchor="middle"
-                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
-                    font-size="9" font-weight="800" fill="#FFFFFF"
-                    letter-spacing="0.06em">PDF</text>
-            </svg>
-            <div class="docmeta">
-              <div class="title">Articles of Association (Thai)</div>
-              <div class="sub">1.1 MB · 22 pages · Updated Apr 2026</div>
+              <div class="title">Articles of Association</div>
+              <div class="sub">Updated Apr 2026</div>
             </div>
             <span class="btn btn-secondary">Download</span>
           </a>
@@ -704,8 +699,8 @@
                     letter-spacing="0.06em">PDF</text>
             </svg>
             <div class="docmeta">
-              <div class="title">Board of Directors Charter</div>
-              <div class="sub">320 KB · Updated 2025</div>
+              <div class="title">Charter of Risk Management Committee</div>
+              <div class="sub">27 Feb 2023</div>
             </div>
             <span class="btn btn-secondary">Download</span>
           </a>
@@ -722,8 +717,8 @@
                     letter-spacing="0.06em">PDF</text>
             </svg>
             <div class="docmeta">
-              <div class="title">Audit Committee Charter</div>
-              <div class="sub">280 KB · Updated 2025</div>
+              <div class="title">Charter of Corporate Governance and Sustainability Committee</div>
+              <div class="sub">30 Nov 2021</div>
             </div>
             <span class="btn btn-secondary">Download</span>
           </a>
@@ -740,8 +735,8 @@
                     letter-spacing="0.06em">PDF</text>
             </svg>
             <div class="docmeta">
-              <div class="title">Nomination &amp; Remuneration Committee Charter</div>
-              <div class="sub">260 KB · Updated 2025</div>
+              <div class="title">Charter of Audit Committee</div>
+              <div class="sub">10 Oct 2018</div>
             </div>
             <span class="btn btn-secondary">Download</span>
           </a>
@@ -758,8 +753,26 @@
                     letter-spacing="0.06em">PDF</text>
             </svg>
             <div class="docmeta">
-              <div class="title">Risk Management Committee Charter</div>
-              <div class="sub">240 KB · Updated 2025</div>
+              <div class="title">Charter of Board of Directors</div>
+              <div class="sub">13 Dec 2018</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Charter of Nomination Committee</div>
+              <div class="sub">14 Aug 2013</div>
             </div>
             <span class="btn btn-secondary">Download</span>
           </a>
@@ -769,9 +782,9 @@
       <section class="doc" id="cg-policies">
         <h2>Corporate Governance Policies</h2>
         <p>
-          The policies that translate our governance framework into day-to-day practice:
-          conflicts of interest, related-party transactions, insider trading, whistleblowing,
-          and shareholder communication.
+          The policies that translate our governance framework into day-to-day practice — including
+          conflicts of interest, related-party transactions, whistleblowing, anti-corruption, human
+          rights, supplier conduct, and shareholder communication.
         </p>
         <div class="doclist">
           <a class="docrow" href="#">
@@ -787,8 +800,26 @@
                     letter-spacing="0.06em">PDF</text>
             </svg>
             <div class="docmeta">
+              <div class="title">The Certificate of Membership of Thailand's Private Sector Collective Action Coalition Against Corruption (Third Renew)</div>
+              <div class="sub">31 Mar 2025</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
               <div class="title">Corporate Governance Policy</div>
-              <div class="sub">480 KB · Updated 2025</div>
+              <div class="sub">13 Nov 2025</div>
             </div>
             <span class="btn btn-secondary">Download</span>
           </a>
@@ -805,8 +836,8 @@
                     letter-spacing="0.06em">PDF</text>
             </svg>
             <div class="docmeta">
-              <div class="title">Code of Business Conduct</div>
-              <div class="sub">410 KB · Updated 2025</div>
+              <div class="title">Risk Management Policy</div>
+              <div class="sub">27 Feb 2024</div>
             </div>
             <span class="btn btn-secondary">Download</span>
           </a>
@@ -823,8 +854,296 @@
                     letter-spacing="0.06em">PDF</text>
             </svg>
             <div class="docmeta">
-              <div class="title">Whistleblower Policy</div>
-              <div class="sub">220 KB · Updated 2025</div>
+              <div class="title">Anti-Corruption Policy Brochure</div>
+              <div class="sub">27 Feb 2024</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Anti-Corruption Policy</div>
+              <div class="sub">27 Feb 2024</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Code of Conduct For Suppliers</div>
+              <div class="sub">27 Feb 2024</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Corporate Code of Conduct</div>
+              <div class="sub">27 Feb 2023</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Business Code of Conduct of The Board of Directors</div>
+              <div class="sub">27 Feb 2023</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Procedures to Propose AGM Agenda Items and Nomination of Board Members</div>
+              <div class="sub">11 Aug 2022</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Invitation to Join Thai Private Sector Collective Action Against Corruption (CAC)</div>
+              <div class="sub">30 Mar 2022</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">The Certificate of Membership of Thailand's Private Sector Collective Action Coalition Against Corruption (Second Renew)</div>
+              <div class="sub">30 Mar 2022</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Whistle Blowing Policy</div>
+              <div class="sub">30 Nov 2021</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Human Rights Policy</div>
+              <div class="sub">11 Aug 2020</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Corporate Tax Policy</div>
+              <div class="sub">30 Apr 2020</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">The Certificate of Membership of Thailand's Private Sector Collective Action Coalition Against Corruption (Renew)</div>
+              <div class="sub">26 Feb 2019</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Corporate Code of Conduct For Investor Relation</div>
+              <div class="sub">13 Dec 2018</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Communication and Disclosure Policy</div>
+              <div class="sub">13 Dec 2018</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">The Certificate of Membership of Thailand's Private Sector Collective Action Coalition Against Corruption</div>
+              <div class="sub">16 Oct 2015</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Declaration of Intent in View of Establishing Thailand's Private Sector Collective Action Coalition Against Corruption</div>
+              <div class="sub">04 Nov 2013</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Policy and Procedure to Report on Interest of Directors, Executives and Related Persons</div>
+              <div class="sub">13 Aug 2009</div>
             </div>
             <span class="btn btn-secondary">Download</span>
           </a>
@@ -839,11 +1158,21 @@
 
       <section class="doc" id="anti-corruption">
         <h2>Anti-Corruption</h2>
+        <h3>Message from Chairman and CEO</h3>
         <p>
-          Hana Microelectronics is a certified member of Thailand's Private Sector Collective
-          Action Coalition Against Corruption (CAC). Our anti-corruption policy applies to
-          directors, employees, suppliers, and business partners across all manufacturing
-          operations in Thailand, China, and Cambodia.
+          The Board of Directors of Hana Microelectronics Public Co., Ltd. realizes the importance
+          of good corporate governance including environmental and social responsibility which is
+          contributed to sustainable growth for the benefit of all stakeholders. The company is
+          committed to doing business with integrity and transparency through its anti-corruption
+          policy. The company has joined Thailand's Private Sector Collective Action Coalition
+          Against Corruption (CAC) with the objective to support the Coalition against Corruption
+          aiming to counter corruption in any forms.
+        </p>
+        <p>
+          All directors, executives, and employees of the company shall strictly conform to the
+          anti-corruption policy as those principles are our tools in the fight against corruption,
+          and expects stakeholder participation and the extent of implementation of anti-corruption
+          which will lead to the Sustainable Development Goals (SDGs).
         </p>
         <div class="doclist">
           <a class="docrow" href="#">
@@ -860,7 +1189,7 @@
             </svg>
             <div class="docmeta">
               <div class="title">Anti-Corruption Policy</div>
-              <div class="sub">360 KB · Updated 2025</div>
+              <div class="sub">Updated 2025</div>
             </div>
             <span class="btn btn-secondary">Download</span>
           </a>
@@ -877,8 +1206,44 @@
                     letter-spacing="0.06em">PDF</text>
             </svg>
             <div class="docmeta">
-              <div class="title">CAC Certification</div>
-              <div class="sub">180 KB · Re-certified 2024</div>
+              <div class="title">Anti-Corruption Policy Brochure</div>
+              <div class="sub">Updated 2025</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Invitation to Join the Anti-Corruption Efforts</div>
+              <div class="sub">Updated 2025</div>
+            </div>
+            <span class="btn btn-secondary">Download</span>
+          </a>
+          <a class="docrow" href="#">
+            <svg class="docicon" viewBox="0 0 44 52" aria-hidden="true">
+              <path d="M 5 0 L 32 0 L 44 12 L 44 47 Q 44 52 39 52 L 5 52 Q 0 52 0 47 L 0 5 Q 0 0 5 0 Z"
+                    fill="#FFFFFF" stroke="#D2D7DE" stroke-width="1"/>
+              <path d="M 32 0 L 44 12 L 33 12 Q 32 12 32 11 Z"
+                    fill="#EBEEF2" stroke="#D2D7DE" stroke-width="1"/>
+              <rect x="4" y="26" width="36" height="16" rx="2" fill="#E1251B"/>
+              <text x="22" y="37" text-anchor="middle"
+                    font-family="Inter, -apple-system, Helvetica, Arial, sans-serif"
+                    font-size="9" font-weight="800" fill="#FFFFFF"
+                    letter-spacing="0.06em">PDF</text>
+            </svg>
+            <div class="docmeta">
+              <div class="title">Anti-Corruption Measures</div>
+              <div class="sub">Updated 2025</div>
             </div>
             <span class="btn btn-secondary">Download</span>
           </a>
