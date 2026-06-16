@@ -356,6 +356,27 @@
     font-size: 12.5px; line-height: 1.5; color: var(--ink-3);
   }
 
+  /* ── Life at Hana — location tabs ── */
+  .life-tabs {
+    display: flex; gap: var(--s-3); flex-wrap: wrap;
+    margin-bottom: var(--s-6);
+  }
+  .life-tab {
+    flex: 1 1 180px;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 15px; font-weight: 500; letter-spacing: -0.005em;
+    padding: var(--s-4) var(--s-5);
+    background: var(--surface-2); color: var(--ink-2);
+    border: 1px solid var(--line); border-radius: 3px;
+    cursor: pointer; text-align: center;
+    transition: background 0.12s, color 0.12s, border-color 0.12s;
+  }
+  .life-tab:hover { border-color: var(--hana-blue); color: var(--ink); }
+  .life-tab.active {
+    background: var(--hana-blue-deep); color: #FFFFFF;
+    border-color: var(--hana-blue-deep);
+  }
+
   /* ── Hana Stories preview band ── */
   .stories-section {
     background: var(--bg);
@@ -822,85 +843,21 @@
       <div class="life-header-text">
         <div class="section-label-mono">Culture &amp; Development</div>
         <h2>Life at Hana</h2>
-        <p>From factory floor to head office — see what it's like to work, grow, and belong at Hana.</p>
+        <p>Life at Hana looks a little different at every site. Choose a location to see what it's like to work, grow, and belong there.</p>
       </div>
     </div>
 
-    <div class="life-grid">
-
-      <div class="life-img">
-        <div class="life-img-scroll">
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 1</span></div>
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 2</span></div>
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 3</span></div>
-        </div>
-        <div class="life-img-cap">
-          <div class="cap-title">Annual Company Days</div>
-          <p class="cap-desc">Bringing the whole Hana family together to celebrate the year's achievements.</p>
-        </div>
-      </div>
-
-      <div class="life-img">
-        <div class="life-img-scroll">
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 1</span></div>
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 2</span></div>
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 3</span></div>
-        </div>
-        <div class="life-img-cap">
-          <div class="cap-title">Celebrations</div>
-          <p class="cap-desc">Marking milestones, festivals, and team achievements throughout the year.</p>
-        </div>
-      </div>
-
-      <div class="life-img">
-        <div class="life-img-scroll">
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 1</span></div>
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 2</span></div>
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 3</span></div>
-        </div>
-        <div class="life-img-cap">
-          <div class="cap-title">Community Outreach</div>
-          <p class="cap-desc">Giving back to the local communities where our people live and work.</p>
-        </div>
-      </div>
-
-      <div class="life-img">
-        <div class="life-img-scroll">
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 1</span></div>
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 2</span></div>
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 3</span></div>
-        </div>
-        <div class="life-img-cap">
-          <div class="cap-title">Technical Training Programme</div>
-          <p class="cap-desc">Building skills and advancing careers at every level of the organisation.</p>
-        </div>
-      </div>
-
-      <div class="life-img">
-        <div class="life-img-scroll">
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 1</span></div>
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 2</span></div>
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 3</span></div>
-        </div>
-        <div class="life-img-cap">
-          <div class="cap-title">Health and Wellbeing</div>
-          <p class="cap-desc">Supporting a healthy, active lifestyle for every member of the Hana team.</p>
-        </div>
-      </div>
-
-      <div class="life-img">
-        <div class="life-img-scroll">
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 1</span></div>
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 2</span></div>
-          <div class="life-img-slide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg><span>Image 3</span></div>
-        </div>
-        <div class="life-img-cap">
-          <div class="cap-title">Student Scholarship</div>
-          <p class="cap-desc">Investing in the next generation of engineering and manufacturing talent.</p>
-        </div>
-      </div>
-
+    <!-- Location tabs — one 6-card grid per site, swapped in by JS -->
+    <div class="life-tabs" role="tablist" aria-label="Life at Hana by location">
+      <button class="life-tab active" role="tab" aria-selected="true"  data-loc="ayutthaya">Life at Ayutthaya</button>
+      <button class="life-tab"        role="tab" aria-selected="false" data-loc="bangkok">Life at Bangkok (HQ)</button>
+      <button class="life-tab"        role="tab" aria-selected="false" data-loc="lamphun">Life at Lamphun</button>
+      <button class="life-tab"        role="tab" aria-selected="false" data-loc="kohkong">Life at Koh Kong</button>
     </div>
+
+    <!-- Dev note: cards render from the LIFE_DATA object in the script below.
+         To change what a site shows, edit that one block — six cards per location. -->
+    <div class="life-grid" id="life-grid" role="tabpanel"></div>
   </div>
 </section>
 
@@ -1161,34 +1118,111 @@
 <div class="footer-placeholder">[ Site footer goes here ]</div>
 
 <script>
-  // Image card scroll arrows
-  document.querySelectorAll('.life-img-scroll').forEach(scroll => {
-    const wrap = document.createElement('div');
-    wrap.className = 'life-img-scroll-wrap';
-    scroll.parentNode.insertBefore(wrap, scroll);
-    wrap.appendChild(scroll);
+  // ── Image-card scroll arrows (reusable — runs on each rendered grid) ──
+  function initCarousels(root) {
+    root.querySelectorAll('.life-img-scroll').forEach(scroll => {
+      if (scroll.dataset.carouselReady) return;
+      scroll.dataset.carouselReady = '1';
 
-    const left  = document.createElement('button');
-    const right = document.createElement('button');
-    left.className  = 'scroll-arrow scroll-arrow-left hidden';
-    right.className = 'scroll-arrow scroll-arrow-right';
-    left.setAttribute('aria-label',  'Previous image');
-    right.setAttribute('aria-label', 'Next image');
-    left.textContent  = '‹';
-    right.textContent = '›';
-    wrap.appendChild(left);
-    wrap.appendChild(right);
+      const wrap = document.createElement('div');
+      wrap.className = 'life-img-scroll-wrap';
+      scroll.parentNode.insertBefore(wrap, scroll);
+      wrap.appendChild(scroll);
 
-    const slideWidth = () => scroll.clientWidth * 0.92;
-    const update = () => {
-      left.classList.toggle('hidden',  scroll.scrollLeft < 4);
-      right.classList.toggle('hidden', scroll.scrollLeft >= scroll.scrollWidth - scroll.clientWidth - 4);
-    };
-    left.addEventListener('click',  () => { scroll.scrollBy({ left: -slideWidth(), behavior: 'smooth' }); });
-    right.addEventListener('click', () => { scroll.scrollBy({ left:  slideWidth(), behavior: 'smooth' }); });
-    scroll.addEventListener('scroll', update);
-    update();
+      const left  = document.createElement('button');
+      const right = document.createElement('button');
+      left.className  = 'scroll-arrow scroll-arrow-left hidden';
+      right.className = 'scroll-arrow scroll-arrow-right';
+      left.setAttribute('aria-label',  'Previous image');
+      right.setAttribute('aria-label', 'Next image');
+      left.textContent  = '‹';
+      right.textContent = '›';
+      wrap.appendChild(left);
+      wrap.appendChild(right);
+
+      const slideWidth = () => scroll.clientWidth * 0.92;
+      const update = () => {
+        left.classList.toggle('hidden',  scroll.scrollLeft < 4);
+        right.classList.toggle('hidden', scroll.scrollLeft >= scroll.scrollWidth - scroll.clientWidth - 4);
+      };
+      left.addEventListener('click',  () => { scroll.scrollBy({ left: -slideWidth(), behavior: 'smooth' }); });
+      right.addEventListener('click', () => { scroll.scrollBy({ left:  slideWidth(), behavior: 'smooth' }); });
+      scroll.addEventListener('scroll', update);
+      update();
+    });
+  }
+
+  // ════════════════════════════════════════════════════════════════════════
+  //  LIFE AT HANA — per-location content
+  //  Six core sections per site. Edit the text here to change what each
+  //  plant shows; the same six titles run across every location.
+  // ════════════════════════════════════════════════════════════════════════
+  const LIFE_DATA = {
+    ayutthaya: [
+      { title: "Annual Company Days",        desc: "The Ayutthaya site comes together each year to celebrate its work in IC assembly and test." },
+      { title: "Celebrations",               desc: "Songkran, New Year and team milestones marked across the Ayutthaya campus." },
+      { title: "Community Outreach",         desc: "Supporting schools and families throughout Ayutthaya province." },
+      { title: "Technical Training Programme", desc: "Hands-on training in semiconductor packaging, assembly and test." },
+      { title: "Health and Wellbeing",       desc: "On-site clinic, sports facilities and wellbeing programmes across every shift." },
+      { title: "Student Scholarship",        desc: "Sponsoring local students into careers in semiconductor manufacturing." }
+    ],
+    bangkok: [
+      { title: "Annual Company Days",        desc: "Group-wide company days bringing our head-office teams together." },
+      { title: "Celebrations",               desc: "Festivals, awards and milestones marked at our Bangkok headquarters." },
+      { title: "Community Outreach",         desc: "Group CSR programmes coordinated from Bangkok across all Hana sites." },
+      { title: "Technical Training Programme", desc: "Leadership, commercial and customer-management development." },
+      { title: "Health and Wellbeing",       desc: "Modern offices, flexible working and wellbeing support." },
+      { title: "Student Scholarship",        desc: "Running Hana's group scholarship and graduate-intake programmes." }
+    ],
+    lamphun: [
+      { title: "Annual Company Days",        desc: "Celebrating the Lamphun site's PCBA and box-build achievements each year." },
+      { title: "Celebrations",               desc: "Northern Thai festivals and team milestones across the Lamphun site." },
+      { title: "Community Outreach",         desc: "Deep local roots — many of our team are from Lamphun itself." },
+      { title: "Technical Training Programme", desc: "SMT, PCBA and box-build skills training at every level." },
+      { title: "Health and Wellbeing",       desc: "Canteen, transport support and health programmes for all employees." },
+      { title: "Student Scholarship",        desc: "Investing in young manufacturing talent across the Lamphun region." }
+    ],
+    kohkong: [
+      { title: "Annual Company Days",        desc: "Marking the growth of our newest site with the whole Koh Kong team." },
+      { title: "Celebrations",               desc: "Khmer New Year and team achievements celebrated at Koh Kong." },
+      { title: "Community Outreach",         desc: "Creating local jobs and supporting families across Koh Kong province." },
+      { title: "Technical Training Programme", desc: "Building assembly and manufacturing skills from the ground up." },
+      { title: "Health and Wellbeing",       desc: "A safe, supportive workplace with on-site welfare facilities." },
+      { title: "Student Scholarship",        desc: "Opening pathways into electronics manufacturing for Cambodian students." }
+    ]
+  };
+
+  const lifeGrid = document.getElementById('life-grid');
+  const lifeSvg = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="14" rx="1.5"/><circle cx="8" cy="9" r="2"/><path d="M3 17l4-4 3 3 4-5 7 6"/></svg>';
+
+  function lifeCard(card) {
+    const slide = n => '<div class="life-img-slide">' + lifeSvg + '<span>Image ' + n + '</span></div>';
+    return '<div class="life-img">' +
+             '<div class="life-img-scroll">' + slide(1) + slide(2) + slide(3) + '</div>' +
+             '<div class="life-img-cap">' +
+               '<div class="cap-title">' + card.title + '</div>' +
+               '<p class="cap-desc">' + card.desc + '</p>' +
+             '</div>' +
+           '</div>';
+  }
+
+  function renderLife(loc) {
+    lifeGrid.innerHTML = LIFE_DATA[loc].map(lifeCard).join('');
+    initCarousels(lifeGrid);
+  }
+
+  document.querySelectorAll('.life-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.life-tab').forEach(t => {
+        const on = t === tab;
+        t.classList.toggle('active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      renderLife(tab.dataset.loc);
+    });
   });
+
+  renderLife('ayutthaya');
 
   // Filter logic
   const checkboxes = document.querySelectorAll('.filter-sidebar input[type="checkbox"]');
